@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Play Game Boy Advance games in your browser">
+    <meta name="theme-color" content="#667eea">
+    
+    <title>GBA Emulator - Play GBA Games Online</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 GBA Emulator</h1>
+            <p class="subtitle">Play Game Boy Advance games in your browser</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <div class="file-input-wrapper">
+                    <input type="file" id="romInput" accept=".gba" aria-label="Choose ROM file">
+                    <label for="romInput" class="file-input-label">
+                        📁 Choose GBA ROM File
+                    </label>
+                </div>
+                
+                <p class="info-text">Select a .gba file to start playing</p>
+                
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+            </div>
+
+            <div id="gameContainer" class="game-container">
+                <div class="screen-wrapper">
+                    <canvas id="screen" width="240" height="160"></canvas>
+                </div>
+                
+                <div class="controls-bar">
+                    <button class="btn" id="playBtn" aria-label="Play">▶️ Play</button>
+                    <button class="btn" id="pauseBtn" aria-label="Pause">⏸️ Pause</button>
+                    <button class="btn" id="resetBtn" aria-label="Reset">🔄 Reset</button>
+                    <button class="btn" id="saveBtn" aria-label="Save State">💾 Save</button>
+                    <button class="btn" id="loadBtn" aria-label="Load State">📂 Load</button>
+                    <button class="btn" id="fullscreenBtn" aria-label="Fullscreen">⛶ Full</button>
+                </div>
+            </div>
+
+            <div class="touch-controls" id="touchControls">
+                <div class="dpad">
+                    <button class="dpad-btn dpad-up" data-key="up" aria-label="Up">▲</button>
+                    <button class="dpad-btn dpad-down" data-key="down" aria-label="Down">▼</button>
+                    <button class="dpad-btn dpad-left" data-key="left" aria-label="Left">◄</button>
+                    <button class="dpad-btn dpad-right" data-key="right" aria-label="Right">►</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" data-key="select" aria-label="Select">SE</button>
+                    <button class="action-btn" data-key="start" aria-label="Start">ST</button>
+                    <button class="action-btn btn-b" data-key="b" aria-label="B Button">B</button>
+                    <button class="action-btn btn-a" data-key="a" aria-label="A Button">A</button>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>🎮 Controls</h3>
+                <div class="control-grid">
+                    <div>
+                        <strong>Keyboard:</strong>
+                        <ul>
+                            <li>Arrow Keys - D-Pad</li>
+                            <li>Z - B Button</li>
+                            <li>X - A Button</li>
+                            <li>Enter - Start</li>
+                            <li>Shift - Select</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Mobile:</strong>
+                        <ul>
+                            <li>Touch controls appear when playing</li>
+                            <li>Use landscape mode for best experience</li>
+                            <li>Tap fullscreen for immersive play</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>📱 Install as App</h3>
+                <p><strong>iPhone/iPad:</strong> Tap share button → "Add to Home Screen"</p>
+                <p><strong>Android:</strong> Tap menu → "Install app" or "Add to home screen"</p>
+            </div>
+
+            <div class="info-card warning">
+                <h3>⚠️ Legal Notice</h3>
+                <p>Only use ROM files you legally own. This emulator is for educational purposes. ROMs are copyrighted by their respective publishers.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for retro gaming enthusiasts</p>
+            <p class="small">Powered by IodineGBA | Not affiliated with Nintendo</p>
+        </footer>
+    </div>
+
+    <script src="js/emulator.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
